@@ -18,6 +18,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		color: #4F5155;
 	}
 
+    .header{
+         color: #ffffff;
+         background-color: #000000;
+         font-size: 100%;
+
+    }
+
 	a {
 		color: #003399;
 		background-color: transparent;
@@ -66,20 +73,53 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</style>
 </head>
 <body>
+<div class="header">
 
+        <h1>Welcome to EMA where we have your employment needs </h1>
+
+</div>
+<!--add employee to data base-->
 <div id="container">
-	<h1>Welcome to CodeIgniter!</h1>
+
 
 	<div id="body">
-		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
+		<form method="post" action="<?php echo site_url('Welcome/savedata'); ?>">
+		    <table>
+		       <tr>
+		           <td>First Name</td>
+		           <td><input type="text" name="fname"></td>
+		       </tr>
 
-		<p>If you would like to edit this page you'll find it located at:</p>
-		<code>application/views/welcome_message.php</code>
+		        <tr>
+                     <td>Last Name:</td>
+                	 <td><input type="text" name="lname"></td>
+                </tr>
 
-		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/Welcome.php</code>
+		       <tr>
+    		       <td>Department:</td>
+    		       <td><input type="text" name="department"></td>
+    		    </tr>
 
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="text" name="email"></td>
+                </tr>
+
+                 <tr>
+      		       <td>Phone:</td>
+      		       <td><input type="text" name="phone"></td>
+      		     </tr>
+
+                 <tr>
+                     <input type="submit"  value="Save" name="submit">
+                 </tr>
+
+
+		    </table>
+
+
+
+
 	</div>
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
@@ -87,3 +127,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 </body>
 </html>
+
