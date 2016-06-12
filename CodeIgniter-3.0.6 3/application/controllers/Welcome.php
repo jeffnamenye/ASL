@@ -37,7 +37,7 @@ class Welcome extends CI_Controller {
                                'Phone' =>this->input->post('phone')
                                 );
          //this means to insert into database table name user
-           $this->db->insert('tblsuser',$data);
+           $this->db->insert('tblEMA',$data);
 
            //this will redirect the data that when inserted will go to my welcome message page
           redirect("Welcome/welcome_message");

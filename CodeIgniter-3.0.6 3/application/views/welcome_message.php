@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	}
 
 	h1 {
-		color: #444;
+	    color:  #ffffff;
 		background-color: transparent;
 		border-bottom: 1px solid #D0D0D0;
 		font-size: 19px;
@@ -44,7 +44,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	code {
 		font-family: Consolas, Monaco, Courier New, Courier, monospace;
 		font-size: 12px;
-		background-color: #f9f9f9;
+		color:  #ffffff;
+		background-color: #490624;
 		border: 1px solid #D0D0D0;
 		color: #002166;
 		display: block;
@@ -57,6 +58,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	}
 
 	p.footer {
+	    color: #fffff
+	    background-color: #000000
 		text-align: right;
 		font-size: 11px;
 		border-top: 1px solid #D0D0D0;
@@ -66,6 +69,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	}
 
 	#container {
+	    color:  #ffffff;
+	    background-color: #490624;
 		margin: 10px;
 		border: 1px solid #D0D0D0;
 		box-shadow: 0 0 8px #D0D0D0;
