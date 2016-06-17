@@ -25,24 +25,8 @@ class Welcome extends CI_Controller {
 
 	  function index()
 	   {
-		$this->load->view('welcome_message');
+		$this->load->view('main');
         }
-       function savedata()
-        {     //creates an array to get data from the welcome_message
-                $data = array(
-                               'First Name' =>this->input->post('fname'),
-                               'Last Name' =>this->input->post('lname'),
-                               'Department' =>this->input->post('department'),
-                               'Email' =>this->input->post('email'),
-                               'Phone' =>this->input->post('phone')
-                                );
-         //this means to insert into database table name user
-           $this->db->insert('tblEMA',$data);
-
-           //this will redirect the data that when inserted will go to my welcome message page
-          redirect("Welcome/welcome_message");
-
-          }
 
 
 }
