@@ -18,13 +18,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		color: #4F5155;
 	}
 
-    .header{
-         color: #ffffff;
-         background-color: #000000;
-         font-size: 100%;
-
-    }
-
 	a {
 		color: #003399;
 		background-color: transparent;
@@ -32,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	}
 
 	h1 {
-	    color:  #ffffff;
+		color: #444;
 		background-color: transparent;
 		border-bottom: 1px solid #D0D0D0;
 		font-size: 19px;
@@ -44,8 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	code {
 		font-family: Consolas, Monaco, Courier New, Courier, monospace;
 		font-size: 12px;
-		color:  #ffffff;
-		background-color: #490624;
+		background-color: #f9f9f9;
 		border: 1px solid #D0D0D0;
 		color: #002166;
 		display: block;
@@ -58,8 +50,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	}
 
 	p.footer {
-	    color: #fffff
-	    background-color: #000000
 		text-align: right;
 		font-size: 11px;
 		border-top: 1px solid #D0D0D0;
@@ -69,8 +59,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	}
 
 	#container {
-	    color:  #ffffff;
-	    background-color: #490624;
 		margin: 10px;
 		border: 1px solid #D0D0D0;
 		box-shadow: 0 0 8px #D0D0D0;
@@ -78,53 +66,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</style>
 </head>
 <body>
-<div class="header">
 
-        <h1>Welcome to EMA where we have your employment needs </h1>
-
-</div>
-<!--add employee to data base-->
 <div id="container">
-
+	<h1>Welcome to CodeIgniter!</h1>
 
 	<div id="body">
-		<form method="post" action="<?php echo site_url('Welcome/savedata'); ?>">
-		    <table>
-		       <tr>
-		           <td>First Name</td>
-		           <td><input type="text" name="fname"></td>
-		       </tr>
+		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
 
-		        <tr>
-                     <td>Last Name:</td>
-                	 <td><input type="text" name="lname"></td>
-                </tr>
+		<p>If you would like to edit this page you'll find it located at:</p>
+		<code>application/views/welcome_message.php</code>
 
-		       <tr>
-    		       <td>Department:</td>
-    		       <td><input type="text" name="department"></td>
-    		    </tr>
+		<p>The corresponding controller for this page is found at:</p>
+		<code>application/controllers/Welcome.php</code>
 
-                <tr>
-                    <td>Email:</td>
-                    <td><input type="text" name="email"></td>
-                </tr>
-
-                 <tr>
-      		       <td>Phone:</td>
-      		       <td><input type="text" name="phone"></td>
-      		     </tr>
-
-                 <tr>
-                     <input type="submit"  value="Save" name="submit">
-                 </tr>
-
-
-		    </table>
-
-
-
-
+		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
 	</div>
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
@@ -132,4 +87,3 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 </body>
 </html>
-

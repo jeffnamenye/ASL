@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -86,7 +88,7 @@
 
 
 	<div id="body">
-		<form method="post" action="<?php echo site_url('cont/savedata'); ?>">
+		<form method="post" >
 		    <table>
 		       <tr>
 		           <td>First Name</td>
