@@ -128,10 +128,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <th>department</th>
                     <th>email</th>
                     <th>phone</th>
-                    <th>Action</th>
 
             </thead>
         </table>
+
 
 	</div>
 
