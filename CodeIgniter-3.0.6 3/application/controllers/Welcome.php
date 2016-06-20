@@ -1,5 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php if (! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
 
@@ -8,13 +7,15 @@ class Welcome extends CI_Controller {
           {
                parent::__construct();
                //this calls my model
-
+               $this->load->model('EMAmodel','m');
 
            }
 
     	  function index()
     	  {
     		$this->load->view('main');
+
+
           }
 
           function savedata()
@@ -36,7 +37,7 @@ class Welcome extends CI_Controller {
 
 
           }
-
+          //This is for when you to edit the data
           function edit($id)
           {
               $row = $this->m->getonerow($id);
@@ -44,8 +45,30 @@ class Welcome extends CI_Controller {
               $this->load->view('edit',$data);
 
           }
+           //This is for when you want to save the edited data
+          function update($id)
+          {
+              $id = $this->input->post('id');
+              $data = array(
+                              'fname' => $this->input->post('fname'),
+                              'lname' => $this->input->post('lname'),
+                              'department' => $this->input->post('department'),
+                              'email' => $this->input->post('email'),
+                              'phone' => $this->input->post('phone')
+                            );
+                $this->db->where('id',$id);
+               $this->db->update('EMA',$data);
+               redirect("Welcome/main");
 
+          }
 
+          function delete($id)
+          {
+                $id = $this->db->where('id',$id);
+                $this->db->delete('user');
+                redirect("Welcome/main");
+
+          }
 
 
 }

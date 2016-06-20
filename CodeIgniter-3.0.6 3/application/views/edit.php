@@ -1,5 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php if (! defined('BASEPATH')) exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,31 +87,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 	<div id="body">
-		<form method="post" action="<?php echo site_url('Welcome/savedata'); ?>">
+		<form method="post" action="<?php echo site_url('Welcome/update'); ?>">
 		    <table>
+		        <input type="text" name="id" value="<?php echo $r->id; ?>">
 		       <tr>
 		           <td>First Name</td>
-		           <td><input type="text" name="fname"></td>
+		           <td><input type="text" name="fname" value="<?php echo $r->fname;?>">></td>
 		       </tr>
 
 		        <tr>
                      <td>Last Name:</td>
-                	 <td><input type="text" name="lname"></td>
+                	 <td><input type="text" name="lname" value="<?php echo $r->lname;?>">></td>
                 </tr>
 
 		       <tr>
     		       <td>Department:</td>
-    		       <td><input type="text" name="department"></td>
+    		       <td><input type="text" name="department" value="<?php echo $r->department;?>">></td>
     		    </tr>
 
                 <tr>
                     <td>Email:</td>
-                    <td><input type="text" name="email"></td>
+                    <td><input type="text" name="email" value="<?php echo $r->email;?>">></td>
                 </tr>
 
                  <tr>
       		       <td>Phone:</td>
-      		       <td><input type="text" name="phone"></td>
+      		       <td><input type="text" name="phone" value="<?php echo $r->phone?>">></td>
       		     </tr>
 
                  <tr>
@@ -128,11 +128,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <th>department</th>
                     <th>email</th>
                     <th>phone</th>
+                    <th>Action</th>
 
             </thead>
         </table>
+        <tbody>
+            <?php
+                foreach($this->m->gettable() as $row)
+                {
+                   echo "<tr>
+                              <td>$row->userid</td>
+                              <td>$row->fname</td>
+                              <td>$row->lname</td>
+                              <td>$row->department</td>
+                              <td>$row->email</td>
+                              <td>$row->phone</td>
+                              <td><a href='".site_url('Welcome/edit/'.$row->id)."'>Edit</a> |
+                                  <a href='".site_url(''Welcome/delete/'.$row->id')."'>Delete</a>
+                              </td>
+                        </tr>";
+                }
 
-
+            ?>
+        </tbody>
 	</div>
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
@@ -140,4 +158,3 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 </body>
 </html>
-
