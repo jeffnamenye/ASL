@@ -87,7 +87,7 @@
 
 
 	<div id="body">
-		<form method="post" action="<?php echo site_url('Welcome/update'); ?>">
+		<form method="post" action="<?php echo site_url('Welcome/savedata'); ?>">
 		    <table>
 		       <tr>
 		           <td>First Name</td>
@@ -121,7 +121,7 @@
         </form>
         <table border="1">
             <thead>
-                    <th>userid</th>
+                    <th>id</th>
                     <th>fname</th>
                     <th>lname</th>
                     <th>department</th>
@@ -136,7 +136,7 @@
                 foreach($this->m->gettable() as $row)
                 {
                    echo "<tr>
-                              <td>$row->userid</td>
+                              <td>$row->id</td>
                               <td>$row->fname</td>
                               <td>$row->lname</td>
                               <td>$row->department</td>

@@ -56,9 +56,9 @@ class Welcome extends CI_Controller {
                               'email' => $this->input->post('email'),
                               'phone' => $this->input->post('phone')
                             );
-                $this->db->where('id',$id);
-               $this->db->update('EMA',$data);
-               redirect("Welcome/main");
+               $this->db->where('id',$id);
+               $this->db->update('users',$data);
+               redirect('Welcome/main');
 
           }
 

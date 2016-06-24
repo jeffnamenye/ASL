@@ -122,7 +122,7 @@
         </form>
         <table border="1">
             <thead>
-                    <th>userid</th>
+                    <th>id</th>
                     <th>fname</th>
                     <th>lname</th>
                     <th>department</th>
@@ -137,7 +137,7 @@
                 foreach($this->m->gettable() as $row)
                 {
                    echo "<tr>
-                              <td>$row->userid</td>
+                              <td>$row->id</td>
                               <td>$row->fname</td>
                               <td>$row->lname</td>
                               <td>$row->department</td>
